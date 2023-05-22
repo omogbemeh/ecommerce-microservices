@@ -49,7 +49,7 @@ public class OrderService {
 
         Boolean allProductsAreInStock = webClient.build()
                 .post()
-                .uri("http://localhost:8082/api/v1/inventory/verify")
+                .uri("http://inventory-service/api/v1/inventory/verify")
                 .bodyValue(inventoryRequestDTOS)
                 .retrieve()
                 .bodyToMono(Boolean.class)
